@@ -3,12 +3,15 @@
   <canvas canvas-id="myAvatar" class="canvas"></canvas>
 
   <!-- 按钮 -->
-  <!-- <view class="headBox">
-    <image src="./img/2.png"</image>
-    <image src="./img/2.png"</image>
-    <image src="./img/2.png"</image>
-    <image src="./img/2.png"</image>
-  </view> -->
+  <view class="headNav">
+    <view class="headBox"  wx:for="{{hat}}" wx:key="{{index}}" data-index='{{index}}' bindtap="choseBoder">
+      <image src="{{item.url}}"></image>
+    </view>
+    
+    
+  </view>
+  <button class="btn-save" bindtap="test">获取头像</button>
   <button class="btn-save" bindtap="upload">上传头像</button>
   <button disabled="{{ !save }}" class="btn-save" bindtap="saveImg">保存到相册</button>
+  <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" >授权登录</button>
 </view>
