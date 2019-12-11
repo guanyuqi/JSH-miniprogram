@@ -60,7 +60,7 @@ Page({
         b: 1,
       },
       {
-        url: '/pages/img/4.png',
+        url: '/pages/img/5.png',
         w: 256,
         h: 256,
         x: 0,
@@ -86,7 +86,12 @@ Page({
   choseBoder(event){
     this.data.hatIndex = event.currentTarget.dataset.index
     console.log(this.data.hatIndex)
-    this.drawAvatar() 
+    if (this.data.hatIndex == 7){
+      this.drawAvatar(35,35,140,140) 
+    }else{
+      this.drawAvatar() 
+    }
+    
   },
 
   // 上传头像图片
@@ -148,13 +153,17 @@ Page({
   },
 
   // 绘制头像背景
-  drawAvatar() {
+  drawAvatar(x,y,x1,y1) {
+    x = x || 0;
+    y = y || 0;
+    x1 = x1 || 210;
+    y1 = y1 || 210;
     let index = this.data.hatIndex
     var that = this;
     var p = that.data;
     context = wx.createCanvasContext('myAvatar', this);
     context.clearRect(0, 0, 210, 210)
-    context.drawImage(p.src, 0, 0, 210, 210);
+    context.drawImage(p.src, x, y, x1, y1);
     context.draw(true);
     context.save();
     context.drawImage(p.hat[index].url, 0, 0, 210, 210);
@@ -200,5 +209,6 @@ Page({
       imageUrl: '../../images/share.png'
     }
   }
+  
 
 })
