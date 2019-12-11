@@ -7,11 +7,13 @@
     <view class="headBox"  wx:for="{{hat}}" wx:key="{{index}}" data-index='{{index}}' bindtap="choseBoder">
       <image src="{{item.url}}"></image>
     </view>
-    
-    
   </view>
-  <button class="btn-save" bindtap="test">获取头像</button>
-  <button class="btn-save" bindtap="upload">上传头像</button>
-  <button disabled="{{ !save }}" class="btn-save" bindtap="saveImg">保存到相册</button>
-  <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" >授权登录</button>
+  <!-- <button class="btn-save" bindtap="test">获取头像</button> -->
+  <view class="btn_box">
+    <button class="btn-save" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" >获取头像</button>
+    <button class="btn-save" bindtap="upload">上传头像</button>
+    <button disabled="{{ !save }}" class="btn-save" bindtap="saveImg">保存到相册</button>
+  </view>
+  
+  
 </view>

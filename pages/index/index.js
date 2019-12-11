@@ -111,14 +111,54 @@ Page({
     //此处授权得到userInfo
     console.log(e.detail.userInfo);
     //接下来写业务代码
-
+    //console.log(e.detail.userInfo.avatarUrl)
+    let avatarUrl = e.detail.userInfo.avatarUrl
+    avatarUrl = avatarUrl.replace('/132', '/0');
+    console.log(avatarUrl)
+    that.data.url = avatarUrl
+    this.handleUrl()
     //最后，记得返回刚才的页面
     wx.navigateBack({
       delta: 1
     })
   },
 
+  handleUrl(){
+    let that = this
+    wx.downloadFile({
+      url: that.data.url,
+      success: res => {
+        // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+        if (res.statusCode === 200) {
+          console.log(res)
+          this.setData({
+            url: res.tempFilePath//将下载下来的地址给data中的变量变量
+          });
+          this.data.src = this.data.url
+          console.log(this.data.url)
+          console.log(this.data.src)
+          this.drawAvatar()
+        }
+      }, fail: res => {
+        console.log(res);
+      }
+    })
+  },
 
+  //获取权限
+  get_info(){
+    wx.openSetting({
+      success(res) {
+        console.log(res.authSetting)
+        // res.authSetting = {
+        //   "scope.userInfo": true,
+        //   "scope.userLocation": true
+        // }
+      }
+    })
+  },
+
+  //获取头像
   test(){
     /* console.log(this.data.src)
     console.log(this.data.url) */

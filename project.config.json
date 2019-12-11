@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -19,7 +19,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.7.2",
-	"appid": "wxacdfeea2b81eeb8d",
+	"appid": "wx4ba40250cf9bd5e2",
 	"projectname": "Avatar",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
