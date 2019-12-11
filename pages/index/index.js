@@ -81,6 +81,7 @@ Page({
         this.data.src = '/pages/img/default.jpg'
         this.drawAvatar() 
   },
+
   //选择边框
   choseBoder(event){
     this.data.hatIndex = event.currentTarget.dataset.index
@@ -88,8 +89,7 @@ Page({
     this.drawAvatar() 
   },
 
-
-  // 选择头像图片
+  // 上传头像图片
   upload() {
     var that = this;
     wx.chooseImage({
@@ -106,6 +106,7 @@ Page({
     })
   },
 
+  //获取用户头像
   bindGetUserInfo: function (e) {
     var that = this;
     //此处授权得到userInfo
@@ -123,6 +124,7 @@ Page({
     })
   },
 
+  //处理用户头像URL
   handleUrl(){
     let that = this
     wx.downloadFile({
@@ -143,61 +145,6 @@ Page({
         console.log(res);
       }
     })
-  },
-
-  //获取权限
-  get_info(){
-    wx.openSetting({
-      success(res) {
-        console.log(res.authSetting)
-        // res.authSetting = {
-        //   "scope.userInfo": true,
-        //   "scope.userLocation": true
-        // }
-      }
-    })
-  },
-
-  //获取头像
-  test(){
-    /* console.log(this.data.src)
-    console.log(this.data.url) */
-    let that = this
-    wx.getUserInfo({
-      success: function (res) {
-        var userInfo = res.userInfo
-        var nickName = userInfo.nickName
-        var avatarUrl = userInfo.avatarUrl
-        var gender = userInfo.gender //性别 0：未知、1：男、2：女
-        var province = userInfo.province
-        var city = userInfo.city
-        var country = userInfo.country
-        avatarUrl = avatarUrl.replace('/132', '/0');
-        that.data.url = avatarUrl
-        console.log('老子获取到了')
-      }
-    })
-    console.log(that.data.url)
-    wx.downloadFile({
-      url: that.data.url,
-      success: res => {
-        // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
-        if (res.statusCode === 200) {
-          console.log(res)
-          this.setData({
-            url: res.tempFilePath//将下载下来的地址给data中的变量变量
-          });
-          this.data.src = this.data.url
-          console.log(this.data.url)
-          console.log(this.data.src)
-          this.drawAvatar()
-        }
-      }, fail: res => {
-        console.log(res);
-      }
-    })
-    
-
   },
 
   // 绘制头像背景
@@ -239,7 +186,19 @@ Page({
         })
       }
     })
-  }
+  },
 
+  //分享
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '送给你个圣诞节头像哦！进来领取吧~',
+      path: 'pages/index/index',
+      imageUrl: '../../images/share.png'
+    }
+  }
 
 })

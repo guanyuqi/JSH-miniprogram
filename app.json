@@ -3,9 +3,9 @@
     "pages/index/index"
   ],
   "window": {
+    "navigationBarTitleText": "给我圣诞节！",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "国旗头像挂件",
+    "navigationBarBackgroundColor": "#c95c61",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"
