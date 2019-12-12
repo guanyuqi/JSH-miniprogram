@@ -1,4 +1,10 @@
 <view class="container">
+
+  <!-- 关联公众号 -->
+  <!-- <view style="width:100%;position:relative;height:70rpx;background:gray;">
+    <official-account style=""></official-account>
+  </view> -->
+
   <!-- 头像绘制区域 -->
   <canvas canvas-id="myAvatar" class="canvas"></canvas>
 
