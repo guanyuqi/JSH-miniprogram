@@ -223,17 +223,8 @@ Page({
       success(res) {
         console.log(res.tempFilePath)
         wx.saveImageToPhotosAlbum({
-          filePath: res.tempFilePath,
-          success(res) {
-            wx.showToast({
-              title: '保存成功'
-            })
-          },
-          fail(res) {
-            wx.showToast({
-              title: '取消保存...',
-              icon: 'none'
-            })
+          success(res) { 
+            console.log(res)
           }
         })
         let url = res.tempFilePath
@@ -242,7 +233,9 @@ Page({
         })
       }
     })
-  }
+  },
+
+  
   
 
 })
