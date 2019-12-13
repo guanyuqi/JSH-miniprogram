@@ -144,7 +144,12 @@ Page({
           this.data.src = this.data.url
           console.log(this.data.url)
           console.log(this.data.src)
-          this.drawAvatar()
+          if (this.data.hatIndex==7){
+            this.drawAvatar(35, 35, 140, 140)
+          }else{
+            this.drawAvatar()
+          }
+          
         }
       }, fail: res => {
         console.log(res);
