@@ -36,31 +36,14 @@ Page({
       y: 0,
       b: 1,
       }, {
-        url: '/pages/img/1.png',
-        w: 256,
-        h: 256,
-        x: 0,
-        y: 0,
-        b: 1,
-      },
-      {
-        url: '/pages/img/2.png',
-        w: 256,
-        h: 256,
-        x: 0,
-        y: 0,
-        b: 1,
-      },
-      {
-        url: '/pages/img/3.png',
-        w: 256,
-        h: 256,
-        x: 0,
-        y: 0,
-        b: 1,
-      },
-      {
         url: '/pages/img/5.png',
+        w: 256,
+        h: 256,
+        x: 0,
+        y: 0,
+        b: 1,
+      }, {
+        url: '/pages/img/6.png',
         w: 256,
         h: 256,
         x: 0,
@@ -86,8 +69,12 @@ Page({
   choseBoder(event){
     this.data.hatIndex = event.currentTarget.dataset.index
     console.log(this.data.hatIndex)
-    if (this.data.hatIndex == 7){
+    if (this.data.hatIndex == 4){
       this.drawAvatar(35,35,140,140) 
+    } else if (this.data.hatIndex == 2){
+      this.drawAvatar(15, 15, 180, 180) 
+    } else if (this.data.hatIndex == 5) {
+      this.drawAvatar(25, 25, 160, 160)
     }else{
       this.drawAvatar() 
     }
@@ -144,9 +131,13 @@ Page({
           this.data.src = this.data.url
           console.log(this.data.url)
           console.log(this.data.src)
-          if (this.data.hatIndex==7){
+          if (this.data.hatIndex == 4) {
             this.drawAvatar(35, 35, 140, 140)
-          }else{
+          } else if (this.data.hatIndex == 2) {
+            this.drawAvatar(15, 15, 180, 180)
+          } else if (this.data.hatIndex == 5) {
+            this.drawAvatar(25, 25, 160, 160)
+          } else {
             this.drawAvatar()
           }
           
