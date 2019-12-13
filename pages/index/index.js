@@ -217,6 +217,20 @@ Page({
       canvasId: 'myAvatar',
       success(res) {
         console.log(res.tempFilePath)
+        wx.saveImageToPhotosAlbum({
+          filePath: res.tempFilePath,
+          success(res) {
+            wx.showToast({
+              title: '保存成功'
+            })
+          },
+          fail(res) {
+            wx.showToast({
+              title: '取消保存...',
+              icon: 'none'
+            })
+          }
+        })
         let url = res.tempFilePath
         wx.navigateTo({
           url: '/pages/share/share?url=' + url,
