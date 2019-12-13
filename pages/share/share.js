@@ -6,21 +6,10 @@ Page({
     url: '',
   },
   onLoad: function() {
-        this.data.src = '/pages/img/default.jpg'
+    this.data.src = '/images/share1.png'
         this.drawAvatar() 
   },
 
-  //选择边框
-  choseBoder(event){
-    this.data.hatIndex = event.currentTarget.dataset.index
-    console.log(this.data.hatIndex)
-    if (this.data.hatIndex == 7){
-      this.drawAvatar(35,35,140,140) 
-    }else{
-      this.drawAvatar() 
-    }
-    
-  },
 
   // 上传头像图片
   upload() {
@@ -89,14 +78,14 @@ Page({
     let index = this.data.hatIndex
     var that = this;
     var p = that.data;
-    context = wx.createCanvasContext('myAvatar', this);
-    context.clearRect(0, 0, 210, 210)
-    context.drawImage(p.src, x, y, x1, y1);
+    context = wx.createCanvasContext('myAvatar1', this);
+    context.clearRect(0, 0, 300, 450)
+    context.drawImage(p.src, 0, 0, 300, 450);
     context.draw(true);
     context.save();
-    context.drawImage(p.hat[index].url, 0, 0, 210, 210);
-    context.draw(true);
-    context.save();
+    // context.drawImage(p.hat[index].url, 0, 0, 210, 210);
+    // context.draw(true);
+    // context.save();
     this.setData({
       save: true
     })
@@ -105,13 +94,13 @@ Page({
   // 保存图片
   saveImg() {
     wx.canvasToTempFilePath({
-      canvasId: 'myAvatar',
+      canvasId: 'myAvatar1',
       success(res) {
         wx.saveImageToPhotosAlbum({
           filePath: res.tempFilePath,
           success(res) {
             wx.showToast({
-              title: '保存成功'
+              title: '赶紧去分享吧~~~'
             })
           },
           fail(res) {

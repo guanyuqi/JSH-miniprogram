@@ -179,6 +179,7 @@ Page({
     wx.canvasToTempFilePath({
       canvasId: 'myAvatar',
       success(res) {
+        console.log(res)
         wx.saveImageToPhotosAlbum({
           filePath: res.tempFilePath,
           success(res) {

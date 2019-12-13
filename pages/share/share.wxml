@@ -6,7 +6,7 @@
   </view> -->
 
   <!-- 头像绘制区域 -->
-  <canvas canvas-id="myAvatar" class="canvas"></canvas>
+  <canvas canvas-id="myAvatar1" class="canvas"></canvas>
 
 
 
