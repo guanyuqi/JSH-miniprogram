@@ -209,6 +209,20 @@ Page({
       path: 'pages/index/index',
       imageUrl: '../../images/share.png'
     }
+  },
+
+  //路由跳转
+  share(){
+    wx.canvasToTempFilePath({
+      canvasId: 'myAvatar',
+      success(res) {
+        console.log(res.tempFilePath)
+        let url = res.tempFilePath
+        wx.navigateTo({
+          url: '/pages/share/share?url=' + url,
+        })
+      }
+    })
   }
   
 

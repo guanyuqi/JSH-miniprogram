@@ -22,11 +22,10 @@
     <button disabled="{{ !save }}" class="btn-save" bindtap="saveImg">保存到相册</button>
   </view>
   
-  <navigator class="share" url="/pages/share/share">
-    <view class="share_box">
+
+    <view class="share_box" bindtap="share">
       <image src='../../images/circle.png'></image>
       <text>分享到朋友圈</text>
     </view>
-  </navigator>
   
 </view>

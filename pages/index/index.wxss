@@ -52,14 +52,13 @@ page {
   font-size: 30rpx;
   color: #28a745;
 }
-
-.share{
-  width: 50%;
+.share_box{
   position: absolute;
   bottom: 20rpx;
-}
-.share_box{
+  left: 50%;
+  margin-left: -125rpx;
   height: 50rpx;
+  width: 250rpx;
   margin-top: 50rpx;
   display: flex;
   flex-direction: row;

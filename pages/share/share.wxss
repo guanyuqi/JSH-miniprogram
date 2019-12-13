@@ -2,7 +2,9 @@
 page {
   height: 100%;
 }
-
+.container{
+  background-color: #c95c61;
+}
 
 .canvas {
   background: #fff;
@@ -30,18 +32,16 @@ page {
   color: #28a745;
 }
 
-.share{
-  width: 50%;
-  position: absolute;
-  bottom: 20rpx;
-}
+
 .share_box{
   height: 50rpx;
   margin-top: 50rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
+  position: absolute;
+  bottom: 20rpx; 
 }
 .share_box > image{
   width: 50rpx;
