@@ -14,12 +14,19 @@
       <image src="{{item.url}}"></image>
     </view>
   </view>
-  <!-- <button class="btn-save" bindtap="test">获取头像</button> -->
+
+  <!-- 按钮容器 -->
   <view class="btn_box">
     <button class="btn-save" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" >获取头像</button>
     <button class="btn-save" bindtap="upload">上传头像</button>
     <button disabled="{{ !save }}" class="btn-save" bindtap="saveImg">保存到相册</button>
   </view>
   
+  <navigator class="share" url="/pages/share/share">
+    <view class="share_box">
+      <image src='../../images/circle.png'></image>
+      <text>分享到朋友圈</text>
+    </view>
+  </navigator>
   
 </view>
