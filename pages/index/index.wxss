@@ -9,7 +9,7 @@ page {
   margin: 0 atuo;
   width: 210px;
   height: 210px;
-  border-radius: 10rpx;
+  border-radius: 15rpx;
   overflow: hidden;
   margin-bottom: 20rpx;
   /* position: absolute;
