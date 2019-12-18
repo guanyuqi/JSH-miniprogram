@@ -56,6 +56,27 @@ Page({
         x: 0,
         y: 0,
         b: 1,
+      }, {
+        url: '/pages/img/8.png',
+        w: 256,
+        h: 256,
+        x: 0,
+        y: 0,
+        b: 1,
+      }, {
+        url: '/pages/img/9.png',
+        w: 256,
+        h: 256,
+        x: 0,
+        y: 0,
+        b: 1,
+      }, {
+        url: '/pages/img/10.png',
+        w: 256,
+        h: 256,
+        x: 0,
+        y: 0,
+        b: 1,
       }],
     normal: {
       url: '/pages/img/normal.png',
@@ -119,14 +140,18 @@ Page({
   choseBoder(event){
     this.data.hatIndex = event.currentTarget.dataset.index
     console.log(this.data.hatIndex)
-    if (this.data.hatIndex == 4) {
-      this.drawAvatar(35, 35, 140, 140)
+    if (this.data.hatIndex == 1) {
+      this.drawAvatar(15, 15, 180, 180)
     } else if (this.data.hatIndex == 2) {
-      this.drawAvatar(28, 14, 154, 154)
+      this.drawAvatar(10, 10, 190, 190)
+    } else if (this.data.hatIndex == 4) {
+      this.drawAvatar(32, 32, 146, 146)
     } else if (this.data.hatIndex == 5) {
-      this.drawAvatar(22, 22, 165, 165)
+      this.drawAvatar(25, 10, 160, 160)
     } else if (this.data.hatIndex == 6) {
-      this.drawAvatar(25, 65, 160, 160)
+      this.drawAvatar(25, 50, 160, 160)
+    } else if (this.data.hatIndex == 7) {
+      this.drawAvatar(10, 10, 190, 190)
     } else {
       this.drawAvatar()
     }

@@ -17,7 +17,7 @@ page {
   margin-left: -105px; */
 }
 .headNav{
-  width: 70%;
+  width: 80%;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10rpx;
   height: 250rpx;
@@ -33,7 +33,7 @@ page {
   height: 80rpx;
   border: 5rpx solid #ddd;
   border-radius: 10rpx;
-  margin: 20rpx;
+  margin: 16rpx;
   background-color: #fff;
 }
 .headBox > image{
