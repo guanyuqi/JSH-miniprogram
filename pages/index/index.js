@@ -56,6 +56,27 @@ Page({
         x: 0,
         y: 0,
         b: 1,
+      }, {
+        url: '/pages/img/8.png',
+        w: 256,
+        h: 256,
+        x: 0,
+        y: 0,
+        b: 1,
+      }, {
+        url: '/pages/img/9.png',
+        w: 256,
+        h: 256,
+        x: 0,
+        y: 0,
+        b: 1,
+      }, {
+        url: '/pages/img/10.png',
+        w: 256,
+        h: 256,
+        x: 0,
+        y: 0,
+        b: 1,
       }],
     normal: {
       url: '/pages/img/normal.png',
