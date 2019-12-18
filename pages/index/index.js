@@ -66,10 +66,53 @@ Page({
       b: 1,
     },
       hatIndex: 0,
+      token:'123',
   },
   onLoad: function() {
         this.data.src = '/pages/img/default.jpg'
         this.drawAvatar() 
+  },
+
+  test() {
+    let that = this
+    wx.request({
+      url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxd1d0c59bd0375449&secret=7c14c99bcb1e724404d2094606e9cc43', 
+      method: 'get',
+      data: {
+        
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.data.token = res.data.access_token
+        console.log(that.data.token)
+        that.check()
+      }
+    })
+  },
+
+  /* 检查敏感信息 */
+  check(url){
+    let that = this
+    let msg = this.data.src
+    wx.request({
+      url: 'https://api.weixin.qq.com/wxa/img_sec_check?access_token=' + that.data.token,
+      method: 'post',
+      data: {
+        media: msg
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res)
+        
+      }
+    })
+    
+    return true
   },
 
   //选择边框
@@ -99,10 +142,20 @@ Page({
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success(res) {
         console.log(res)
-        that.setData({
-          src: res.tempFilePaths[0]
-        })
-        that.drawAvatar()
+        
+        let status =  that.check(res.tempFilePaths[0])
+        console.log(status)
+        if (status){
+          that.setData({
+            src: res.tempFilePaths[0]
+          })
+          that.drawAvatar()
+        }else{
+          wx.showToast({
+            title: '请重新上传'
+          })
+        }
+        
       }
     })
   },

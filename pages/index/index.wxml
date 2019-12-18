@@ -20,6 +20,7 @@
     <button class="btn-save" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" >获取头像</button>
     <button class="btn-save" bindtap="upload">上传头像</button>
     <button disabled="{{ !save }}" class="btn-save" bindtap="saveImg">保存到相册</button>
+    <button class="btn-save" bindtap="test">测试</button>
   </view>
   
 
